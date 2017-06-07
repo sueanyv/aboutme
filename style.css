@@ -43,7 +43,215 @@ ul.topnav li.icon {
 }
 
 
+/* Safari 4.0 - 8.0 */
 
+@-webkit-keyframes example {
+    0% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 350px;
+        top: 0px;
+    }
+    50% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 350px;
+        top: 400px;
+    }
+    75% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 0px;
+        top: 400px;
+    }
+    100% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 0px;
+        top: 0px;
+    }
+}
+
+
+/* Standard syntax */
+
+@keyframes example {
+    0% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 350px;
+        top: 0px;
+    }
+    50% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 350px;
+        top: 500px;
+    }
+    75% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 0px;
+        top: 500px;
+    }
+    100% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.boxx {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(8, 114, 255, 0.38);
+    position: relative;
+    -webkit-animation-name: boxx;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: boxx;
+    animation-duration: 4s;
+}
+
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes boxx {
+    0% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 350px;
+        top: 0px;
+    }
+    50% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 350px;
+        top: -500px;
+    }
+    75% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 0px;
+        top: -500px;
+    }
+    100% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 0px;
+        top: 0px;
+    }
+}
+
+
+/* Standard syntax */
+
+@keyframes boxx {
+    0% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 350px;
+        top: 0px;
+    }
+    50% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 350px;
+        top: -500px;
+    }
+    75% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 0px;
+        top: -500px;
+    }
+    100% {
+        background-color: rgba(8, 114, 255, 0.38);
+        left: 0px;
+        top: 0px;
+    }
+}
+
+#aboutme {
+    height: 400px;
+}
+
+#summary {
+    width: 40%;
+    /*float: right;*/
+    margin-left: 40%;
+    padding-top: 5%;
+    animation: fadein 15s;
+    -moz-animation: fadein 15s;
+    /* Firefox */
+    -webkit-animation: fadein 15s;
+    /* Safari and Chrome */
+    -o-animation: fadein 15s;
+    /* Opera */
+}
+
+#me {
+    float: left;
+    margin-left: 100px;
+    height: 55%;
+    padding-top: 60px;
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+    animation: fadein 15s;
+    -moz-animation: fadein 15s;
+    /* Firefox */
+    -webkit-animation: fadein 15s;
+    /* Safari and Chrome */
+    -o-animation: fadein 15s;
+    /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+    /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+    /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 #sugey {
     font-family: 'Lobster', cursive;
@@ -51,6 +259,14 @@ ul.topnav li.icon {
     color: rgba(8, 114, 255, 0.38);
 }
 
+#HTML {
+    font-family: 'Lobster', cursive;
+    font-size: 16px;
+}
+
+#abmepg {
+    margin-top: 10%;
+}
 #HTML {
     font-family: 'Lobster', cursive;
     font-size: 16px;

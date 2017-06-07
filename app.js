@@ -65,3 +65,58 @@ if (dancing === 'YES' || dancing === 'Y') {
 };
 
 console.log('the user \'s answer is ' + dancing);
+
+var counter = 0;
+while (counter < 4) {
+  var number = parseInt(prompt('I am thinking of a random number between 1 & 6?.'));
+  var topnumber = Math.floor(Math.random() * 6) + 1;
+  if (topnumber == number) {
+    alert('Good Job!');
+    score += 1;
+    break;
+  } else {
+    alert(' try again the number was ' + topnumber);
+    counter += 1;
+  };
+}
+
+
+console.log('the user \'s answer is ' + number);
+
+var counter1 = 0;
+while (counter1 < 6) {
+  var places = ['TEXAS', 'PENNSYLVANIA', 'MARYLAND'];
+  var state = prompt('Can you guess a state that I have lived in besides Washington?').toUpperCase();
+  var answerwasfound = false;
+  for (var i = 0; i < places.length; i++) {
+    console.log(places.length);
+    places[i];
+    if (state === places[i]) {
+      answerwasfound = true;
+      score += 1;
+      break;
+    }
+  }
+
+  if (answerwasfound === true) {
+    alert('You are correct, I have lived in Texas, Pennsylvania , Maryland');
+    break;
+  } else {
+    alert('You are wrong');
+    counter1++;
+  }
+}
+if (counter1 === 6) {
+  alert('Sorry! you are out of guesses for this question. The other states I have lived in are Texas, Pennsylvania , Maryland');
+};
+if (score === 7) {
+  alert('Congratulations!' + names + ' you got' + score + '/ 7 questions correct');
+
+} else {
+  alert('Sorry ' + names + 'you got ' + score + '/7 questions correct');
+
+}
+
+
+
+console.log('the user \'s answer is ' + state);
