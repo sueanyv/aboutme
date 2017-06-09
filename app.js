@@ -52,3 +52,32 @@ function question7() {
         break;
       }
     }
+    if (answerwasfound === true) {
+      alert('You are correct, I have lived in Texas, Pennsylvania , Maryland');
+      break;
+    } else {
+      alert('You are wrong');
+      counter1++;
+    }
+  }
+  if (counter1 === 6) {
+    alert('Sorry! you are out of guesses for this question. The other states I have lived in are Texas, Pennsylvania , Maryland');
+  }
+  if (score === 7) {
+    alert('Congratulations!' + names + ' you got' + score + '/ 7 questions correct');
+
+  } else {
+    alert('Sorry ' + names + 'you got ' + score + '/7 questions correct');
+
+  }
+  console.log('the user \'s answer is ' + state);
+  };
+
+
+  function total() {
+  if (score === 7) {
+    alert('Congratulations!' + names + ' you got ' + score + '/ 7 questions correct');
+  } else {
+    alert('Sorry ' + names + ' you got ' + score + '/7 questions correct');
+  }
+  }
