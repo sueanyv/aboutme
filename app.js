@@ -38,6 +38,24 @@ function question6 () {
   }
 };
 
+function question7() {
+  var counter1 = 0;
+  var places = ['TEXAS', 'PENNSYLVANIA', 'MARYLAND'];
+  var answerwasfound = false;
+  while (counter1 < 6) {
+    var state = prompt('Can you guess a state that I have lived in besides Washington?').toUpperCase();
+    for (var j = 0; j < places.length; j++) {
+      console.log(places.length);
+      if (state === places[j]) {
+        answerwasfound = true;
+        score++;
+        break;
+      }
+    }
+
+
+
+
   if (answerwasfound === true) {
     alert('You are correct, I have lived in Texas, Pennsylvania , Maryland');
     break;
