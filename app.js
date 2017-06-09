@@ -17,88 +17,26 @@ function questions1to5 (questionNumber) {
     alert('Sorry you got it wrong!');
   }
 };
-console.log('the user \'s answer is ' + live + ' , ' + score);
-
-var gold = prompt('Is my favorite color Gold? Yes or No').toUpperCase();
-if (gold === 'YES' || gold === 'Y') {
-  alert('Correct!');
-  score += 1;
-
-} else if (gold === 'NO' || gold === 'N') {
-  alert('Sorry you got it wrong!');
-
-} else {
-  alert('Wrong Input!');
-}
 
 
-console.log('the user \'s answer is ' + gold + ',' + score);
-
-var sing = prompt('Can I sing? Yes or No').toUpperCase();
-if (sing === 'NO' || sing === 'N') {
-  alert('Correct!');
-  score += 1;
-} else if (sing === 'Yes' || sing === 'Y') {
-  alert('Sorry you got it wrong!');
-} else {
-  alert('Wrong Input!');
-};
-console.log('the user \'s answer is ' + sing);
-
-var pizza = prompt('Do I dislike pizza? Yes or No').toUpperCase();
-if (pizza === 'YES' || pizza === 'Y') {
-  alert('Correct!');
-  score += 1;
-} else if (pizza === 'NO' || pizza === 'N') {
-  alert('Sorry you got it wrong!');
-} else {
-  alert('Wrong Input!');
-};
-console.log('the user \'s answer is ' + pizza);
-
-var dancing = prompt('Do I like  to dance? Yes or No').toUpperCase();
-if (dancing === 'YES' || dancing === 'Y') {
-  alert('Correct!');
-  score += 1;
-} else if (dancing === 'NO' || dancing === 'N') {
-  alert('Sorry you got it wrong!');
-} else {
-  alert('Wrong Input!');
-};
-
-console.log('the user \'s answer is ' + dancing);
-
-var counter = 0;
-while (counter < 4) {
-  var number = parseInt(prompt('I am thinking of a random number between 1 & 6?.'));
-  var topnumber = Math.floor(Math.random() * 6) + 1;
-  if (topnumber == number) {
-    alert('Good Job!');
-    score += 1;
-    break;
-  } else {
-    alert(' try again the number was ' + topnumber);
-    counter += 1;
-  };
-}
-
-
-console.log('the user \'s answer is ' + number);
-
-var counter1 = 0;
-while (counter1 < 6) {
-  var places = ['TEXAS', 'PENNSYLVANIA', 'MARYLAND'];
-  var state = prompt('Can you guess a state that I have lived in besides Washington?').toUpperCase();
-  var answerwasfound = false;
-  for (var i = 0; i < places.length; i++) {
-    console.log(places.length);
-    places[i];
-    if (state === places[i]) {
-      answerwasfound = true;
-      score += 1;
+function question6 () {
+  var counter = 0;
+  var topNumber = Math.floor(Math.random() * 6) + 1;
+  console.log(topNumber);
+  while (counter < 4) {
+    var number = parseInt(prompt('I am thinking of a random number between 1 & 6?.'));
+    if (topNumber === number) {
+      alert('Good Job!');
+      score++;
       break;
+    } else if (number < topNumber) {
+      alert('Too low. Try again.');
+    } else {
+      alert('Too high. Try again.');
     }
+    counter += 1;
   }
+};
 
   if (answerwasfound === true) {
     alert('You are correct, I have lived in Texas, Pennsylvania , Maryland');
