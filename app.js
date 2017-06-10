@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 var names = prompt('Hello! please enter your name.');
 alert(' Welcome to my page ' + names + '! Lets play a game, There are 7 question about me. lets see how many you can get correct. GOOD LUCK ');
 var score = 0;
@@ -13,7 +11,7 @@ if (live === 'YES' || live === 'Y') {
   alert('Sorry you got it wrong!');
 } else {
   alert('Wrong Input!');
-};
+}
 
 console.log('the user \'s answer is ' + live + ' , ' + score);
 
@@ -40,7 +38,7 @@ if (sing === 'NO' || sing === 'N') {
   alert('Sorry you got it wrong!');
 } else {
   alert('Wrong Input!');
-};
+}
 console.log('the user \'s answer is ' + sing);
 
 var pizza = prompt('Do I dislike pizza? Yes or No').toUpperCase();
@@ -51,7 +49,7 @@ if (pizza === 'YES' || pizza === 'Y') {
   alert('Sorry you got it wrong!');
 } else {
   alert('Wrong Input!');
-};
+}
 console.log('the user \'s answer is ' + pizza);
 
 var dancing = prompt('Do I like  to dance? Yes or No').toUpperCase();
@@ -62,22 +60,24 @@ if (dancing === 'YES' || dancing === 'Y') {
   alert('Sorry you got it wrong!');
 } else {
   alert('Wrong Input!');
-};
+}
 
 console.log('the user \'s answer is ' + dancing);
 
 var counter = 0;
+var topNumber = 16;
 while (counter < 4) {
-  var number = parseInt(prompt('I am thinking of a random number between 1 & 6?.'));
-  var topnumber = Math.floor(Math.random() * 6) + 1;
-  if (topnumber == number) {
+  var number = parseInt(prompt('I am thinking of a random number between 1 - 24. Can you guess What it is?.'));
+  if (topNumber === number) {
     alert('Good Job!');
-    score += 1;
+    score++;
     break;
+  } else if (number < topNumber) {
+    alert('Too low. Try again.');
   } else {
-    alert(' try again the number was ' + topnumber);
-    counter += 1;
-  };
+    alert('Too high. Try again.');
+  }
+  counter += 1;
 }
 
 
@@ -108,7 +108,7 @@ while (counter1 < 6) {
 }
 if (counter1 === 6) {
   alert('Sorry! you are out of guesses for this question. The other states I have lived in are Texas, Pennsylvania , Maryland');
-};
+}
 if (score === 7) {
   alert('Congratulations!' + names + ' you got' + score + '/ 7 questions correct');
 
