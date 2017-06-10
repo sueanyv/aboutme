@@ -1,6 +1,5 @@
 'use strict';
 
-var score = 0;
 
 var questions = ['Do I live in Seattle? Yes or No.', 'Is my favorite color Gold? Yes or No', 'Can I sing? Yes or No', 'Do I dislike pizza? Yes or No', 'Do I like to dance? Yes or No.', 'I am thinking of a random number between 1 & 6?.'];
 var answers = [
@@ -17,6 +16,7 @@ function yourName() {
 
 }
 
+
 function questions1to5(questionNumber) {
   var answer = prompt(questions[questionNumber]).toUpperCase();
   if (answer === answers[questionNumber][0] || answer === answers[questionNumber][1]) {
@@ -28,12 +28,13 @@ function questions1to5(questionNumber) {
 };
 
 
+
 function question6() {
   var counter = 0;
-  var topNumber = Math.floor(Math.random() * 6) + 1;
+  var topNumber = 16;
   console.log(topNumber);
   while (counter < 4) {
-    var number = parseInt(prompt('I am thinking of a random number between 1 & 6?.'));
+    var number = parseInt(prompt('I am thinking of a random number between 1 & 24? you have 4 tries.'));
     if (topNumber === number) {
       alert('Good Job!');
       score++;
@@ -44,6 +45,9 @@ function question6() {
       alert('Too high. Try again.');
     }
     counter += 1;
+  }
+  if (counter === 4) {
+    alert('You are out of guesses the correct answer is 16.');
   }
 };
 
@@ -79,8 +83,11 @@ function question7() {
     alert('Sorry ' + names + 'you got ' + score + '/7 questions correct');
 
   }
+
   console.log('the user \'s answer is ' + state);
 };
+
+
 
 
 function total() {
@@ -96,10 +103,10 @@ function motherFucktion() {
   for (var i = 0; i < 5; i++) {
     questions1to5(i);
   }
-  
+
   question6();
   question7();
   total();
 };
-//
+
 motherFucktion();
