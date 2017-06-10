@@ -1,8 +1,7 @@
 'use strict';
 
 var score = 0;
-var names = prompt('Hello! please enter your name.');
-alert(' Welcome to my page ' + names + '! Lets play a game, There are 7 question about me. lets see how many you can get correct. GOOD LUCK ');
+
 var questions = ['Do I live in Seattle? Yes or No.', 'Is my favorite color Gold? Yes or No', 'Can I sing? Yes or No', 'Do I dislike pizza? Yes or No', 'Do I like to dance? Yes or No.', 'I am thinking of a random number between 1 & 6?.'];
 var answers = [
   ['YES', 'Y'],
@@ -12,6 +11,11 @@ var answers = [
   ['YES', 'Y']
 ];
 
+function yourName() {
+  var names = prompt('Hello! please enter your name.');
+  alert(' Welcome to my page ' + names + '! Lets play a game, There are 7 question about me. lets see how many you can get correct. GOOD LUCK ');
+
+}
 
 function questions1to5(questionNumber) {
   var answer = prompt(questions[questionNumber]).toUpperCase();
@@ -88,12 +92,14 @@ function total() {
 }
 
 function motherFucktion() {
+  yourName();
   for (var i = 0; i < 5; i++) {
     questions1to5(i);
   }
+  
   question6();
   question7();
   total();
 };
-
+//
 motherFucktion();
