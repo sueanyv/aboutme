@@ -1,122 +1,112 @@
 'use strict';
 
-var names = prompt('Hello! please enter your name.');
-alert(' Welcome to my page ' + names + '! Lets play a game, There are 7 question about me. lets see how many you can get correct. GOOD LUCK ');
-var score = 0;
-var live = prompt('Do I live in seattle? Yes or No').toUpperCase();
-if (live === 'YES' || live === 'Y') {
-  alert('Correct!');
-  score += 1;
-} else if (live === 'NO' || live === 'N') {
-  alert('Sorry you got it wrong!');
-} else {
-  alert('Wrong Input!');
-}
 
-console.log('the user \'s answer is ' + live + ' , ' + score);
+var questions = ['Do I live in Seattle? Yes or No.', 'Is my favorite color Gold? Yes or No', 'Can I sing? Yes or No', 'Do I dislike pizza? Yes or No', 'Do I like to dance? Yes or No.', 'I am thinking of a random number between 1 & 6?.'];
+var answers = [
+  ['YES', 'Y'],
+  ['YES', 'Y'],
+  ['NO', 'N'],
+  ['YES', 'Y'],
+  ['YES', 'Y']
+];
 
-var gold = prompt('Is my favorite color Gold? Yes or No').toUpperCase();
-if (gold === 'YES' || gold === 'Y') {
-  alert('Correct!');
-  score += 1;
+function yourName() {
+  var names = prompt('Hello! please enter your name.');
+  alert(' Welcome to my page ' + names + '! Lets play a game, There are 7 question about me. lets see how many you can get correct. GOOD LUCK ');
 
-} else if (gold === 'NO' || gold === 'N') {
-  alert('Sorry you got it wrong!');
-
-} else {
-  alert('Wrong Input!');
 }
 
 
-console.log('the user \'s answer is ' + gold + ',' + score);
-
-var sing = prompt('Can I sing? Yes or No').toUpperCase();
-if (sing === 'NO' || sing === 'N') {
-  alert('Correct!');
-  score += 1;
-} else if (sing === 'Yes' || sing === 'Y') {
-  alert('Sorry you got it wrong!');
-} else {
-  alert('Wrong Input!');
-}
-console.log('the user \'s answer is ' + sing);
-
-var pizza = prompt('Do I dislike pizza? Yes or No').toUpperCase();
-if (pizza === 'YES' || pizza === 'Y') {
-  alert('Correct!');
-  score += 1;
-} else if (pizza === 'NO' || pizza === 'N') {
-  alert('Sorry you got it wrong!');
-} else {
-  alert('Wrong Input!');
-}
-console.log('the user \'s answer is ' + pizza);
-
-var dancing = prompt('Do I like  to dance? Yes or No').toUpperCase();
-if (dancing === 'YES' || dancing === 'Y') {
-  alert('Correct!');
-  score += 1;
-} else if (dancing === 'NO' || dancing === 'N') {
-  alert('Sorry you got it wrong!');
-} else {
-  alert('Wrong Input!');
-}
-
-console.log('the user \'s answer is ' + dancing);
-
-var counter = 0;
-var topNumber = 16;
-while (counter < 4) {
-  var number = parseInt(prompt('I am thinking of a random number between 1 - 24. Can you guess What it is?.'));
-  if (topNumber === number) {
-    alert('Good Job!');
+function questions1to5(questionNumber) {
+  var answer = prompt(questions[questionNumber]).toUpperCase();
+  if (answer === answers[questionNumber][0] || answer === answers[questionNumber][1]) {
+    alert('Correct!');
     score++;
-    break;
-  } else if (number < topNumber) {
-    alert('Too low. Try again.');
   } else {
-    alert('Too high. Try again.');
+    alert('Sorry you got it wrong!');
   }
-  counter += 1;
-}
+};
 
 
-console.log('the user \'s answer is ' + number);
 
-var counter1 = 0;
-while (counter1 < 6) {
-  var places = ['TEXAS', 'PENNSYLVANIA', 'MARYLAND'];
-  var state = prompt('Can you guess a state that I have lived in besides Washington?').toUpperCase();
-  var answerwasfound = false;
-  for (var i = 0; i < places.length; i++) {
-    console.log(places.length);
-    places[i];
-    if (state === places[i]) {
-      answerwasfound = true;
-      score += 1;
+function question6() {
+  var counter = 0;
+  var topNumber = 16;
+  console.log(topNumber);
+  while (counter < 4) {
+    var number = parseInt(prompt('I am thinking of a random number between 1 & 24? you have 4 tries.'));
+    if (topNumber === number) {
+      alert('Good Job!');
+      score++;
       break;
+    } else if (number < topNumber) {
+      alert('Too low. Try again.');
+    } else {
+      alert('Too high. Try again.');
+    }
+    counter += 1;
+  }
+  if (counter === 4) {
+    alert('You are out of guesses the correct answer is 16.');
+  }
+};
+
+function question7() {
+  var counter1 = 0;
+  var places = ['TEXAS', 'PENNSYLVANIA', 'MARYLAND'];
+  var answerwasfound = false;
+  while (counter1 < 6) {
+    var state = prompt('Can you guess a state that I have lived in besides Washington?').toUpperCase();
+    for (var j = 0; j < places.length; j++) {
+      console.log(places.length);
+      if (state === places[j]) {
+        answerwasfound = true;
+        score++;
+        break;
+      }
+    }
+    if (answerwasfound === true) {
+      alert('You are correct, I have lived in Texas, Pennsylvania , Maryland');
+      break;
+    } else {
+      alert('You are wrong');
+      counter1++;
     }
   }
+  if (counter1 === 6) {
+    alert('Sorry! you are out of guesses for this question. The other states I have lived in are Texas, Pennsylvania , Maryland');
+  }
+  if (score === 7) {
+    alert('Congratulations!' + names + ' you got' + score + '/ 7 questions correct');
 
-  if (answerwasfound === true) {
-    alert('You are correct, I have lived in Texas, Pennsylvania , Maryland');
-    break;
   } else {
-    alert('You are wrong');
-    counter1++;
+    alert('Sorry ' + names + 'you got ' + score + '/7 questions correct');
+
+  }
+
+  console.log('the user \'s answer is ' + state);
+};
+
+
+
+
+function total() {
+  if (score === 7) {
+    alert('Congratulations!' + names + ' you got ' + score + '/ 7 questions correct');
+  } else {
+    alert('Sorry ' + names + ' you got ' + score + '/7 questions correct');
   }
 }
-if (counter1 === 6) {
-  alert('Sorry! you are out of guesses for this question. The other states I have lived in are Texas, Pennsylvania , Maryland');
-}
-if (score === 7) {
-  alert('Congratulations!' + names + ' you got' + score + '/ 7 questions correct');
 
-} else {
-  alert('Sorry ' + names + 'you got ' + score + '/7 questions correct');
+function motherFucktion() {
+  yourName();
+  for (var i = 0; i < 5; i++) {
+    questions1to5(i);
+  }
 
-}
+  question6();
+  question7();
+  total();
+};
 
-
-
-console.log('the user \'s answer is ' + state);
+motherFucktion();
